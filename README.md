@@ -1,2 +1,2 @@
 # AmazonSite
-Amazon AI記事サイト
+Amazon 記事サイト
