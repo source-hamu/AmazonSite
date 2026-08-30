@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>おすすめ商品紹介サイト</title>
+    <title>おすすめ商品紹介 | Amazon商品情報サイト</title>
 
     <style>
         * {
@@ -100,55 +100,99 @@
             cursor: pointer;
         }
 
+        .category:hover {
+            background: #e5e5e5;
+        }
+
         .section-title {
             margin: 35px 0 20px;
             font-size: 24px;
         }
 
-        .products {
+        .articles {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
-        .product {
+        .article {
             background: white;
             border-radius: 12px;
-            padding: 20px;
+            overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .product-image {
-            height: 180px;
-            background: #eee;
-            border-radius: 8px;
+        .article:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .article-image {
+            height: 170px;
+            background: #e9e9e9;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #999;
-            margin-bottom: 15px;
+            font-size: 14px;
         }
 
-        .product h3 {
-            margin: 10px 0;
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-category {
+            display: inline-block;
+            font-size: 12px;
+            padding: 5px 10px;
+            background: #eee;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article h3 {
+            margin: 5px 0 10px;
             font-size: 18px;
+            line-height: 1.5;
         }
 
-        .product p {
+        .article p {
+            margin: 0;
             color: #666;
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .button {
-            display: block;
-            text-align: center;
-            padding: 12px;
+        .read-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 16px;
             background: #333;
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .read-button:hover {
+            background: #555;
+        }
+
+        .info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .info h2 {
+            margin-top: 0;
+        }
+
+        .info p {
+            color: #666;
+            line-height: 1.8;
         }
 
         footer {
@@ -157,6 +201,11 @@
             background: #222;
             color: white;
             text-align: center;
+        }
+
+        footer p {
+            margin: 5px;
+            font-size: 13px;
         }
 
         @media (max-width: 700px) {
@@ -176,6 +225,10 @@
             .hero h1 {
                 font-size: 26px;
             }
+
+            .articles {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -184,96 +237,411 @@
 
 <header>
     <div class="header-inner">
-        <div class="logo">おすすめ商品紹介</div>
+
+        <div class="logo">
+            おすすめ商品紹介
+        </div>
 
         <div class="search-box">
-            <input type="text" placeholder="商品を検索">
+            <input type="text" placeholder="記事・商品を検索">
             <button>検索</button>
         </div>
+
     </div>
 </header>
+
 
 <main>
 
     <section class="hero">
-        <h1>おすすめ商品を探そう</h1>
+
+        <h1>Amazonおすすめ商品を探そう</h1>
 
         <p>
-            Amazonで購入できるおすすめ商品を、
-            カテゴリーや用途ごとに紹介する商品情報サイトです。
+            Amazonで購入できる商品をカテゴリーや用途ごとに比較し、
+            おすすめの商品を分かりやすく紹介しています。
         </p>
 
         <div class="categories">
+
             <div class="category">家電</div>
             <div class="category">パソコン</div>
             <div class="category">スマートフォン</div>
             <div class="category">ゲーム</div>
             <div class="category">生活用品</div>
+            <div class="category">イヤホン</div>
+            <div class="category">PC周辺機器</div>
             <div class="category">その他</div>
-        </div>
-    </section>
 
-    <h2 class="section-title">おすすめ商品</h2>
-
-    <section class="products">
-
-        <div class="product">
-            <div class="product-image">
-                商品画像
-            </div>
-
-            <h3>おすすめ商品 1</h3>
-
-            <p>
-                商品の特徴やおすすめポイントを
-                ここに掲載します。
-            </p>
-
-            <a href="#" class="button">
-                Amazonで見る
-            </a>
-        </div>
-
-        <div class="product">
-            <div class="product-image">
-                商品画像
-            </div>
-
-            <h3>おすすめ商品 2</h3>
-
-            <p>
-                商品の特徴やおすすめポイントを
-                ここに掲載します。
-            </p>
-
-            <a href="#" class="button">
-                Amazonで見る
-            </a>
-        </div>
-
-        <div class="product">
-            <div class="product-image">
-                商品画像
-            </div>
-
-            <h3>おすすめ商品 3</h3>
-
-            <p>
-                商品の特徴やおすすめポイントを
-                ここに掲載します。
-            </p>
-
-            <a href="#" class="button">
-                Amazonで見る
-            </a>
         </div>
 
     </section>
+
+
+    <h2 class="section-title">
+        最新の記事
+    </h2>
+
+
+    <section class="articles">
+
+
+        <!-- 記事1 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    イヤホン
+                </span>
+
+                <h3>
+                    1万円以下でおすすめのワイヤレスイヤホン10選
+                </h3>
+
+                <p>
+                    コストパフォーマンスを重視して、
+                    価格・音質・使いやすさなどからおすすめ商品を比較します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事2 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    PC
+                </span>
+
+                <h3>
+                    大学生におすすめのノートパソコン10選
+                </h3>
+
+                <p>
+                    レポート作成やオンライン授業など、
+                    大学生が使いやすいノートパソコンを比較します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事3 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    ゲーム
+                </span>
+
+                <h3>
+                    コスパの良いゲーミングヘッドセットおすすめ10選
+                </h3>
+
+                <p>
+                    ゲーム用途に必要な音質・マイク・装着感などを比較し、
+                    おすすめ商品を紹介します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事4 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    PC周辺機器
+                </span>
+
+                <h3>
+                    仕事で使いやすいおすすめマウス10選
+                </h3>
+
+                <p>
+                    長時間のパソコン作業でも使いやすいマウスを、
+                    操作性やサイズなどから比較します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事5 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    キーボード
+                </span>
+
+                <h3>
+                    PC作業におすすめのキーボード10選
+                </h3>
+
+                <p>
+                    タイピングのしやすさや静音性などを比較して、
+                    用途別におすすめのキーボードを紹介します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事6 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    モニター
+                </span>
+
+                <h3>
+                    1万円台から選ぶおすすめPCモニター
+                </h3>
+
+                <p>
+                    テレワークやゲームなど用途別に、
+                    コストパフォーマンスの高いモニターを紹介します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事7 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    スマートフォン
+                </span>
+
+                <h3>
+                    コスパ重視で選ぶおすすめスマートフォン
+                </h3>
+
+                <p>
+                    価格と性能のバランスを重視して、
+                    おすすめスマートフォンを比較します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事8 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    生活用品
+                </span>
+
+                <h3>
+                    Amazonで買える便利な生活用品10選
+                </h3>
+
+                <p>
+                    毎日の生活を少し便利にしてくれる
+                    おすすめ商品を厳選して紹介します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事9 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    ゲーム
+                </span>
+
+                <h3>
+                    ゲーム環境を快適にするおすすめPC用品
+                </h3>
+
+                <p>
+                    ゲーム環境を改善したい人向けに、
+                    便利なPC周辺機器を紹介します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 記事10 -->
+
+        <article class="article">
+
+            <div class="article-image">
+                記事画像
+            </div>
+
+            <div class="article-content">
+
+                <span class="article-category">
+                    Amazon
+                </span>
+
+                <h3>
+                    Amazonで買ってよかったおすすめ商品10選
+                </h3>
+
+                <p>
+                    日常生活や仕事、趣味など、
+                    幅広い用途で役立つおすすめ商品を紹介します。
+                </p>
+
+                <a href="#" class="read-button">
+                    記事を読む
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <section class="info">
+
+        <h2>
+            このサイトについて
+        </h2>
+
+        <p>
+            当サイトでは、Amazonで購入できる商品を調査し、
+            価格・性能・用途などの情報を比較して、
+            商品選びに役立つ情報を提供します。
+        </p>
+
+        <p>
+            今後はAIを活用して、ユーザーの希望条件に合わせた
+            商品検索・比較・おすすめ機能を追加する予定です。
+        </p>
+
+    </section>
+
 
 </main>
 
+
 <footer>
-    <p>© 2026 おすすめ商品紹介サイト</p>
+
+    <p>
+        © 2026 おすすめ商品紹介サイト
+    </p>
+
+    <p>
+        当サイトはAmazonアソシエイト・プログラムへの参加を予定しています。
+    </p>
+
 </footer>
 
 </body>
